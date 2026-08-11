@@ -7,8 +7,10 @@
     /delete-property/ y-invert;
 };
 
-&trackball_peripheral_split {
-    input-processors = <
-        &zip_ble_report_rate_limit
-    >;
+/ {
+    trackball_left_test_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball_peripheral>;
+        input-processors = <&zip_ble_report_rate_limit>;
+    };
 };
